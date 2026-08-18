@@ -118,9 +118,9 @@ After installing, verify these work:
 - [ ] **Copy works:** Select text with mouse, then paste into another app with `Ctrl+V`
 - [ ] **Theme loaded:** Background should be a warm light brown (`#6D4815`)
 - [ ] **Font size:** Text should be readable at 12pt. Adjust with `Ctrl+Shift+=`/`-`
-- [ ] **Nvim colors:** Open nvim — colors should match your theme (requires `termguicolors = true`)
+- [ ] **Nvim colors:** Open nvim; colors should match your theme (requires `termguicolors = true`)
 - [ ] **Splits work:** Press `Ctrl+Shift+Enter` to create a split, `Ctrl+Shift+W` to close it
-- [ ] **Remote control:** Run `kitty @ ls` — should output JSON about your kitty windows
+- [ ] **Remote control:** Run `kitty @ ls`; it should output JSON about your kitty windows
 
 ---
 
@@ -130,13 +130,13 @@ After installing, verify these work:
 
 A typical development session using kitty + nvim:
 
-1. **Open kitty** — launches with your shell in a single window
-2. **Open nvim** — edit files as normal, clipboard is shared with kitty
-3. **Split the terminal** — `Ctrl+Shift+Enter` to open a shell beside nvim for running commands
-4. **Switch between splits** — `Ctrl+Shift+]` / `Ctrl+Shift+[`
-5. **Use tabs** for separate projects — `Ctrl+Shift+T` for new tab, `Ctrl+Shift+Right/Left` to switch
-6. **Stack layout** — `Ctrl+Shift+L` to toggle fullscreen on current split (focus mode)
-7. **Copy anything** — select text with mouse (auto-copies) or use `Ctrl+Shift+C`
+1. **Open kitty**: launches with your shell in a single window
+2. **Open nvim**: edit files as normal, clipboard is shared with kitty
+3. **Split the terminal**: `Ctrl+Shift+Enter` to open a shell beside nvim for running commands
+4. **Switch between splits**: `Ctrl+Shift+]` / `Ctrl+Shift+[`
+5. **Use tabs** for separate projects: `Ctrl+Shift+T` for new tab, `Ctrl+Shift+Right/Left` to switch
+6. **Stack layout**: `Ctrl+Shift+L` to toggle fullscreen on current split (focus mode)
+7. **Copy anything**: select text with mouse (auto-copies) or use `Ctrl+Shift+C`
 
 ### Working with Neovim Inside Kitty
 
@@ -155,7 +155,7 @@ This works because:
 
 **Navigating between nvim splits and kitty splits:**
 
-Without a plugin, nvim splits and kitty splits are separate — `Ctrl+W+h/j/k/l` moves within nvim, `Ctrl+Shift+]/[` moves within kitty. To unify them, install `vim-kitty-navigator` or `smart-splits.nvim` (see [Recommended Neovim Plugins](#recommended-neovim-plugins)).
+Without a plugin, nvim splits and kitty splits are separate: `Ctrl+W+h/j/k/l` moves within nvim, `Ctrl+Shift+]/[` moves within kitty. To unify them, install `vim-kitty-navigator` or `smart-splits.nvim` (see [Recommended Neovim Plugins](#recommended-neovim-plugins)).
 
 **Opening files from kitty in nvim:**
 
@@ -235,7 +235,7 @@ Kitty detects URLs in terminal output and underlines them on hover.
 Ctrl+Shift+E
 ```
 
-This activates **hints mode** for URLs — each detected URL gets a short label. Type the label to open it. Very useful for keyboard-only workflows.
+This activates **hints mode** for URLs. Each detected URL gets a short label; type the label to open it. Very useful for keyboard-only workflows.
 
 ### Scrollback and History
 
@@ -251,10 +251,10 @@ This activates **hints mode** for URLs — each detected URL gets a short label.
 
 **Shell integration features** (enabled by `shell_integration enabled`):
 
-- Each command prompt is marked — you can jump between prompts
-- `Ctrl+Shift+Z` — scroll to previous command prompt
-- `Ctrl+Shift+X` — scroll to next command prompt
-- `Ctrl+Shift+G` — view just the output of the last command
+- Each command prompt is marked, so you can jump between prompts
+- `Ctrl+Shift+Z`: scroll to previous command prompt
+- `Ctrl+Shift+X`: scroll to next command prompt
+- `Ctrl+Shift+G`: view just the output of the last command
 
 ### Hints Mode (Smart Selection)
 
@@ -262,8 +262,8 @@ Hints mode lets you select specific types of text using the keyboard:
 
 | Shortcut | What it selects |
 |----------|----------------|
-| `Ctrl+Shift+E` | URLs — type label to open |
-| `Ctrl+Shift+P > F` | File paths — type label to open in `$EDITOR` |
+| `Ctrl+Shift+E` | URLs; type label to open |
+| `Ctrl+Shift+P > F` | File paths; type label to open in `$EDITOR` |
 | `Ctrl+Shift+P > H` | Hash-like strings (git SHAs, etc.) |
 | `Ctrl+Shift+P > N` | Line numbers from compiler output |
 | `Ctrl+Shift+P > W` | Words |
@@ -539,7 +539,7 @@ clipboard_control write-clipboard write-primary read-clipboard read-primary
 
 **Important rules:**
 - One setting per line
-- No `=` sign — just space between key and value
+- No `=` sign, just space between key and value
 - Lines starting with `#` are comments
 - Settings are applied top-to-bottom; last value wins if duplicated
 - Use `include` to import other files
@@ -666,8 +666,8 @@ include kitty-${KITTY_OS}.conf
 ```
 
 Then create:
-- `kitty-linux.conf` — Linux-specific settings
-- `kitty-macos.conf` — macOS-specific settings
+- `kitty-linux.conf`: Linux-specific settings
+- `kitty-macos.conf`: macOS-specific settings
 
 If the file doesn't exist, the include is silently ignored.
 
@@ -842,7 +842,7 @@ Or always load it via `startup_session` in `kitty.conf`.
 ```
 ~/.config/kitty/
 ├── kitty.conf              # Main configuration file
-├── wallpaper-theme.conf    # Active color theme (Reze Selfie — wallpaper match)
+├── wallpaper-theme.conf    # Active color theme (Reze Selfie, wallpaper match)
 ├── aura-theme.conf         # Previous theme (Aura Dracula Spirit (Soft)), kept for easy revert
 ├── current-theme.conf      # Older theme (Base2Tone Lavender Dark), kept for easy revert
 ├── kitty.conf.bak          # Backup of original default config
@@ -870,7 +870,7 @@ include wallpaper-theme.conf
 - **Active theme:** Reze Selfie (wallpaper match)
 - **Source:** colors sampled from the desktop wallpaper
   (`~/.local/share/backgrounds/2026-08-12-15-22-07-reze-selfie-5120x2880-26716.jpg`),
-  spaced apart by lightness/hue so commands, diffs, and diagnostics stay distinguishable —
+  spaced apart by lightness/hue so commands, diffs, and diagnostics stay distinguishable,
   not a literal 1:1 histogram match (the wallpaper itself has almost no blue/cyan/purple).
 - **Palette:** warm browns/ambers, unified with the matching Ptyxis `.palette`
 - **Background:** `#6D4815` (light warm brown)
@@ -879,7 +879,7 @@ include wallpaper-theme.conf
 
 The theme is stored in `wallpaper-theme.conf` and included into the main config. Previous themes
 (Aura Dracula Spirit (Soft) in `aura-theme.conf`, Base2Tone Lavender Dark in `current-theme.conf`)
-are kept if you ever want to switch back — just change the `include` line above.
+are kept if you ever want to switch back; just change the `include` line above.
 
 ### Fonts
 
@@ -1364,7 +1364,7 @@ kitty +kitten themes --reload-in=all <Theme Name>
    ```
    Without `--location`, new windows are placed by the layout's default algorithm.
 
-3. Switch layouts with `Ctrl+Shift+L` — this cycles through your `enabled_layouts` list.
+3. Switch layouts with `Ctrl+Shift+L`; this cycles through your `enabled_layouts` list.
 
 4. If you accidentally closed all splits and can't get back, open a new window: `Ctrl+Shift+Enter`.
 
