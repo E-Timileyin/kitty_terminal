@@ -116,7 +116,7 @@ A minimal, well-structured kitty terminal configuration optimized for Neovim dev
 After installing, verify these work:
 
 - [ ] **Copy works:** Select text with mouse, then paste into another app with `Ctrl+V`
-- [ ] **Theme loaded:** Background should be dark purple-black (`#201d2a`)
+- [ ] **Theme loaded:** Background should be dark purple-black (`#191521`)
 - [ ] **Font size:** Text should be readable at 12pt. Adjust with `Ctrl+Shift+=`/`-`
 - [ ] **Nvim colors:** Open nvim — colors should match your theme (requires `termguicolors = true`)
 - [ ] **Splits work:** Press `Ctrl+Shift+Enter` to create a split, `Ctrl+Shift+W` to close it
@@ -842,7 +842,8 @@ Or always load it via `startup_session` in `kitty.conf`.
 ```
 ~/.config/kitty/
 ├── kitty.conf            # Main configuration file
-├── current-theme.conf    # Active color theme (Base2Tone Lavender Dark)
+├── aura-theme.conf       # Active color theme (Aura Dracula Spirit (Soft))
+├── current-theme.conf    # Previous theme (Base2Tone Lavender Dark), kept for easy revert
 ├── kitty.conf.bak        # Backup of original default config
 └── README.md             # This documentation
 ```
@@ -850,7 +851,8 @@ Or always load it via `startup_session` in `kitty.conf`.
 | File | Purpose |
 |------|---------|
 | `kitty.conf` | Main config. All settings live here. Uses vim foldmarkers (`{{{`/`}}}`) for section folding. |
-| `current-theme.conf` | Color theme, included by `kitty.conf`. Managed by `kitty +kitten themes` command. Do not edit manually. |
+| `aura-theme.conf` | Active color theme, included by `kitty.conf`. |
+| `current-theme.conf` | Previous theme, no longer included. Swap the `include` line in `kitty.conf` to revert. |
 | `kitty.conf.bak` | Backup of the original default configuration for reference. |
 
 ---
@@ -860,17 +862,19 @@ Or always load it via `startup_session` in `kitty.conf`.
 ### Theme
 
 ```conf
-include current-theme.conf
+include aura-theme.conf
 ```
 
-- **Active theme:** Base2Tone Lavender Dark
-- **Author:** Bram de Haan
-- **Palette:** Duotone blue-lavender-violet-magenta
-- **Background:** `#201d2a` (dark purple-black)
-- **Foreground:** `#9992b0` (muted lavender)
-- **Cursor:** `#b042ff` (bright purple)
+- **Active theme:** Aura Dracula Spirit (Soft)
+- **Author:** [JoseMurilloc](https://github.com/JoseMurilloc/aura-spirit-dracula)
+- **Palette:** Purple-forward dark, unified across kitty + tmux + nvim
+- **Background:** `#191521` (dark purple-black)
+- **Foreground:** `#edecee`
+- **Cursor:** `#a277ff` (purple)
 
-The theme is stored in `current-theme.conf` and included into the main config. This separation keeps theme colors manageable and allows easy swapping via `kitty +kitten themes`.
+The theme is stored in `aura-theme.conf` and included into the main config. This separation keeps
+theme colors manageable and allows easy swapping via `kitty +kitten themes`. The previous theme
+(Base2Tone Lavender Dark) is kept in `current-theme.conf` if you ever want it back.
 
 ### Fonts
 
