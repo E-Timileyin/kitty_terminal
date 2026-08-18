@@ -116,7 +116,7 @@ A minimal, well-structured kitty terminal configuration optimized for Neovim dev
 After installing, verify these work:
 
 - [ ] **Copy works:** Select text with mouse, then paste into another app with `Ctrl+V`
-- [ ] **Theme loaded:** Background should be dark purple-black (`#191521`)
+- [ ] **Theme loaded:** Background should be a warm light brown (`#6D4815`)
 - [ ] **Font size:** Text should be readable at 12pt. Adjust with `Ctrl+Shift+=`/`-`
 - [ ] **Nvim colors:** Open nvim — colors should match your theme (requires `termguicolors = true`)
 - [ ] **Splits work:** Press `Ctrl+Shift+Enter` to create a split, `Ctrl+Shift+W` to close it
@@ -841,18 +841,20 @@ Or always load it via `startup_session` in `kitty.conf`.
 
 ```
 ~/.config/kitty/
-├── kitty.conf            # Main configuration file
-├── aura-theme.conf       # Active color theme (Aura Dracula Spirit (Soft))
-├── current-theme.conf    # Previous theme (Base2Tone Lavender Dark), kept for easy revert
-├── kitty.conf.bak        # Backup of original default config
-└── README.md             # This documentation
+├── kitty.conf              # Main configuration file
+├── wallpaper-theme.conf    # Active color theme (Reze Selfie — wallpaper match)
+├── aura-theme.conf         # Previous theme (Aura Dracula Spirit (Soft)), kept for easy revert
+├── current-theme.conf      # Older theme (Base2Tone Lavender Dark), kept for easy revert
+├── kitty.conf.bak          # Backup of original default config
+└── README.md               # This documentation
 ```
 
 | File | Purpose |
 |------|---------|
 | `kitty.conf` | Main config. All settings live here. Uses vim foldmarkers (`{{{`/`}}}`) for section folding. |
-| `aura-theme.conf` | Active color theme, included by `kitty.conf`. |
-| `current-theme.conf` | Previous theme, no longer included. Swap the `include` line in `kitty.conf` to revert. |
+| `wallpaper-theme.conf` | Active color theme, included by `kitty.conf`. |
+| `aura-theme.conf` | Previous theme, no longer included. Swap the `include` line in `kitty.conf` to revert. |
+| `current-theme.conf` | Older theme, no longer included. |
 | `kitty.conf.bak` | Backup of the original default configuration for reference. |
 
 ---
@@ -862,19 +864,22 @@ Or always load it via `startup_session` in `kitty.conf`.
 ### Theme
 
 ```conf
-include aura-theme.conf
+include wallpaper-theme.conf
 ```
 
-- **Active theme:** Aura Dracula Spirit (Soft)
-- **Author:** [JoseMurilloc](https://github.com/JoseMurilloc/aura-spirit-dracula)
-- **Palette:** Purple-forward dark, unified across kitty + tmux + nvim
-- **Background:** `#191521` (dark purple-black)
-- **Foreground:** `#edecee`
-- **Cursor:** `#a277ff` (purple)
+- **Active theme:** Reze Selfie (wallpaper match)
+- **Source:** colors sampled from the desktop wallpaper
+  (`~/.local/share/backgrounds/2026-08-12-15-22-07-reze-selfie-5120x2880-26716.jpg`),
+  spaced apart by lightness/hue so commands, diffs, and diagnostics stay distinguishable —
+  not a literal 1:1 histogram match (the wallpaper itself has almost no blue/cyan/purple).
+- **Palette:** warm browns/ambers, unified with the matching Ptyxis `.palette`
+- **Background:** `#6D4815` (light warm brown)
+- **Foreground:** `#EFD0A5`
+- **Cursor:** `#EFD0A5`
 
-The theme is stored in `aura-theme.conf` and included into the main config. This separation keeps
-theme colors manageable and allows easy swapping via `kitty +kitten themes`. The previous theme
-(Base2Tone Lavender Dark) is kept in `current-theme.conf` if you ever want it back.
+The theme is stored in `wallpaper-theme.conf` and included into the main config. Previous themes
+(Aura Dracula Spirit (Soft) in `aura-theme.conf`, Base2Tone Lavender Dark in `current-theme.conf`)
+are kept if you ever want to switch back — just change the `include` line above.
 
 ### Fonts
 
